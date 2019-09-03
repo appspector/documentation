@@ -85,7 +85,7 @@ let config = AppSpectorConfig(apiKey: "API_KEY", publicKey: "PUBLIC_KEY", monito
 AppSpector.run(with: config)
 ```
 or start all monitors
-```
+```swift
 let config = AppSpectorConfig(apiKey: "API_KEY", publicKey: "PUBLIC_KEY")
 AppSpector.run(with: config)
 ```
@@ -94,7 +94,7 @@ AppSpector.run(with: config)
 #### Objective-C
 <!-- integration-objc-example-start -->
 First import the framework:
-```
+```objective-c
 @import AppSpectorSDKE2E;
 ```
 
@@ -106,7 +106,7 @@ AppSpectorConfig *config = [AppSpectorConfig configWithAPIKey:@"API_KEY" publicK
 ```
 
 or start all monitors
-```
+```objective-c
 AppSpectorConfig *config = [AppSpectorConfig configWithAPIKey:@"API_KEY" publicKey:@"PUBLIC_KEY"];
 [AppSpector runWithConfig:config];
 ```
