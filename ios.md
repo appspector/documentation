@@ -67,4 +67,47 @@ This script is required as a workaround for this [Apple AppStore bug](http://www
 #### Apple TV
 AppSpector is also available for tvOS, you can use any of described above methods to install it, all you need is just use `AppSpectorTVSDK` pod instead of `AppSpectorSDK` and include `AppSpectorTVSDK.framework` instead of `AppSpectorSDK.framework`.
 
+
+## Integration
+
+#### Swift
+<!-- integration-swift-example-start -->
+First import the framework:
+```
+import AppSpectorSDK
+```
+
+Start selected monitors only
+```swift
+let config = AppSpectorConfig(apiKey: "API_KEY", monitorIDs: [Monitor.http, Monitor.logs])
+AppSpector.run(with: config)
+```
+or start all monitors
+```
+let config = AppSpectorConfig(apiKey: "API_KEY")
+AppSpector.run(with: config)
+```
+<!-- integration-swift-example-end -->
+
+#### Objective-C
+<!-- integration-objc-example-start -->
+First import the framework:
+```
+@import AppSpectorSDK;
+```
+
+Start selected monitors only
+```objective-c
+NSSet *monitorIDs = [NSSet setWithObjects:AS_HTTP_MONITOR, AS_LOG_MONITOR, nil];
+AppSpectorConfig *config = [AppSpectorConfig configWithAPIKey:@"API_KEY" monitorIDs:monitorIDs];
+[AppSpector runWithConfig:config];
+```
+
+or start all monitors
+```
+AppSpectorConfig *config = [AppSpectorConfig configWithAPIKey:@"API_KEY"];
+[AppSpector runWithConfig:config];
+```
+<!-- integration-objc-example-end -->
+
 [Join our slack to discuss setup process and features](https://slack.appspector.com)
